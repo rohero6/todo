@@ -53,7 +53,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 21
 
       # 安装 Rust
       - name: Install Rust stable
@@ -74,7 +74,7 @@ jobs:
       - uses: jetli/wasm-pack-action@v0.3.0
         with:
           # Optional version of wasm-pack to install(eg. 'v0.9.1', 'latest')
-          version: v0.9.1
+          version: latest
 
       # 可选，如果需要使用 rsw 构建 wasm，则安装 rsw
       - name: Install rsw
