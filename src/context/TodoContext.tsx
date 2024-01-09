@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { nanoid } from 'nanoid'
-import { writeTextFile, BaseDirectory, readTextFile, exists, createDir } from '@tauri-apps/api/fs';
+import { writeTextFile, BaseDirectory, readTextFile, exists } from '@tauri-apps/api/fs';
 
 
 interface TodoContextProps {
