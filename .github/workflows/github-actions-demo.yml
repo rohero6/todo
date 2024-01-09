@@ -74,7 +74,7 @@ jobs:
       - uses: jetli/wasm-pack-action@v0.3.0
         with:
           # Optional version of wasm-pack to install(eg. 'v0.9.1', 'latest')
-          version: latest
+          version: v0.9.1
 
       # 可选，如果需要使用 rsw 构建 wasm，则安装 rsw
       - name: Install rsw
@@ -98,7 +98,7 @@ jobs:
       # 安装依赖执行构建，以及推送 github release
       - name: Install app dependencies and build it
         # 这里的pubhome要修改为你package.json里面配置的编译命令
-        run: yarn && yarn pubhome
+        run: yarn && yarn tsc && vite build
       - uses: tauri-apps/tauri-action@v0.3
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
